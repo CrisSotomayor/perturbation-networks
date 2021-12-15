@@ -12,7 +12,7 @@ The function of a protein is strongly dependent on its structure. During evoluti
 _A) Experimentally obtained functional data from deep mutational scan of VIM-2 protein, with darker values representing higher functional disruption, specifically blue is loss of function while red represents gain of function [2]. B) Standardized data of the number of nodes perturbed by each mutation where each entry is the number of standard deviations from the mean of the distribution. The perturbation network was constructed using a threshold of 9 Å; blue represents highest structural perturbation, and red represents lowest. C) Predictions maximizing precision. X-axis has the sequence positions, Y-axis has the experimentally obtained mean functional value. Blue dots are SSPs---our predictions for FSPs---while shaded blue area contains the 40% of sequence positions with lowest functional scores representing strongest functional loss. Top row shows the functional values experimentally obtained for VIM-2 protein, bottom row the other four proteins studied. D) Predictions maximizing recall. E) Predictions maximizing both measures._
 
 
-## Data
+## Data
 
 All the data used can be found under `data`, including the three-dimensional coordinate files for the proteins selected (under `data/pdb`), deep mutational scanning data for the five proteins selected (under `data`, files `functional_{pdb_id}.csv`) and the data obtained from the different perturbation networks (under `data/structure`). The proteins selected and corresponding papers are PSD95^{pdz3} (PDB: 1BE9) [4], phosphatase and tensin homolog (PTEN) (PDB: 1D5R) [5], APH(3')II (PDB: 1ND4) [6], Src kinase catalytic domain (Src CD, PDB: 3DQW) [1], and VIM-2 metallo-$\beta$-lactamase (PDB: 4BZ3) [2].
 
