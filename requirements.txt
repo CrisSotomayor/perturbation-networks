@@ -1,0 +1,9 @@
+biographs
+biopyhton
+matplotlib
+networkx
+numpy
+pandas
+scikit-learn
+scipy
+seaborn
