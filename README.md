@@ -21,6 +21,7 @@ All the data used can be found under `data`, including the three-dimensional coo
 
 Code to obtain the data is found in `.py` files.
 - `getdata.py` contains functions to get data from amino acid mutation perturbation networks as CSV files.
+- `getdata_predictions.py` contains functions to get data from amino acid mutation perturbation networks as CSV files, updated to manually define thresholds to use. 
 - `getmutations.py` contains functions and code to obtain mutations using FoldX [7].
 - `iterate.py` contains functions and code to run both `getmutations.py` and `getdata.py`, including the functions from the module `biographs` that were used.
 - `main_functions.py` contains functions used in jupyter notebooks for figures and analysis, specifically to read the stored data and obtain predicted positions
