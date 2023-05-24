@@ -130,5 +130,6 @@ if __name__ == '__main__':
     home_path = os.path.join(os.getenv("HOME"), "perturbation_networks")
     # Path where pdb data is stored
     path = os.path.join(home_path, protein)
+    pdb_file = os.path.join(path, f"{protein}.pdb")
     mutations = gm.MutationsDict(pdb_file)
     GetData(path, protein, mutations)
