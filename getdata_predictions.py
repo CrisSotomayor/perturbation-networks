@@ -1,6 +1,7 @@
 import os
 import Bio.PDB
-import biographs as bg
+import iterate as it
+import getmutations as gm
 import numpy as np
 import networkx as nx
 import csv
@@ -32,7 +33,7 @@ def GetData(path, prot, mutations, csv_path=None, thresholds=[9]):
     cols = list(mutations.keys())  # List of mutated positions
 
     # Generate molecule of original pdb file
-    original_prot = bg.Pmolecule(os.path.join(path, f"{prot}.pdb"))
+    original_prot = it.Pmolecule(os.path.join(path, f"{prot}.pdb"))
 
     # Create dir to save resulting csv files if not specified
     if csv_path is None:
@@ -63,7 +64,7 @@ def GetData(path, prot, mutations, csv_path=None, thresholds=[9]):
             for mutation in mutations[position]:
                 # Generate network for current mutation
                 current_path = os.path.join(path, f"{prot}_{mutation}.pdb")
-                current_prot = bg.Pmolecule(current_path)
+                current_prot = it.Pmolecule(current_path)
                 current = current_prot.network(cutoff=threshold)
 
                 # Obtain the absolute difference in terms of adjacency
@@ -123,3 +124,11 @@ def WriteCSV(csv_path, attribute, header, name):
         writer.writerow(header)
         writer.writerows(attribute)
     return None
+
+if __name__ == '__main__':
+    protein = '1d5r'
+    home_path = os.path.join(os.getenv("HOME"), "perturbation_networks")
+    # Path where pdb data is stored
+    path = os.path.join(home_path, protein)
+    mutations = gm.MutationsDict(pdb_file)
+    GetData(path, protein, mutations)
